@@ -1,0 +1,17 @@
+function checkAge(Age) {
+    return new Promise(function(resolve, reject) {
+        if (Age > 18) {
+           setTimeout(() => resolve("Success"), 2000);
+        } else {
+            
+            setTimeout(() => reject('error'), 2000);
+        }
+    });
+}
+let Promise = checkAge(20);
+ Promise.then(function() {
+ console.log("Older than 18");
+ })
+ .catch(function() {
+ console.log("less than 18");
+ });
